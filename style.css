@@ -1,0 +1,129 @@
+/* GENERAL STYLES */
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  background: #ffe6f0;
+  color: #a6002f;
+  padding: 10px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* PUZZLE CONTAINER */
+#puzzle-container {
+  width: 90vw;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  margin: 20px auto;
+  position: relative;
+  border: 3px solid #fff;
+}
+
+/* PUZZLE TILE */
+.tile {
+  position: absolute;
+  border: 1px solid #fff;
+  cursor: grab;
+  background-size: calc(100% * cols) calc(100% * rows); /* adjust to your cols/rows */
+  transition: all 0.2s;
+}
+.tile.locked {
+  border-color: gold;
+  box-shadow: 0 0 10px gold;
+  cursor: default;
+}
+
+/*Prize Link*/
+.prize-link {
+  text-decoration: none;
+  background-color: #a6002f;
+  color: #ffe6f0;
+  padding: 5%;
+}
+
+.prize-link:hover {
+  cursor: pointer;
+}
+
+/* HINT IMAGE */
+#hint-container {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 70px;
+  height: 70px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+#hint-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hint-container.big {
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%) scale(2);
+  width: 90vw;
+  max-width: 300px;
+  height: auto;
+  z-index: 2000;
+}
+
+/* MODAL */
+#prize-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+}
+
+#prize-modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  box-sizing: border-box;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: #a6002f;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.modal-content h2{
+    margin:0;
+}
+
+.modal-content img {
+  width: 200px;
+  margin: 10px 0;
+}
+
+/* CONFETTI CANVAS */
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 6000;
+}

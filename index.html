@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AR Valentine Puzzle</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<span>❤️</span>
+<h1>Valentine Puzzle </h1>
+<p>Assemble the image to reveal your surprise!</p>
+
+<div id="puzzle-container"></div>
+
+<div id="hint-container">
+  <img id="hint-img" src="timfam.jpg" alt="Hint" />
+</div>
+
+<div id="prize-modal" class="hidden">
+  <div class="modal-content">
+    <h2>🎉Congratulations!🎉</h2>
+    <p>You completed the puzzle!</p>
+    <a href="prize.html" class="prize-link">Claim your prize</a>
+    <button id="close-modal" style="display: none;">Close</button>
+  </div>
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
