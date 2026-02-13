@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Valentine</title>
+    <link rel="stylesheet" href="bouquet.css" />
+  </head>
+  <body>
+    <div class="petals"></div>
+    <div class="hearts"></div>
+    <div class="fireworks"></div>
+
+    <div class="container">
+      <h1>Flowers for you LangLang💙</h1>
+      <p>Click it to accept</p>
+      <img src="blue-bouquet.png" class="bouquet" id="bouquet" />
+    </div>
+
+    <!-- Valentine Modal -->
+    <div class="modal" id="valentineModal">
+      <div class="modal-content">
+        <h2>Will You Be My Valentine? 💙</h2>
+        <div class="buttons">
+          <button id="yesBtn">YES 💙</button>
+          <button id="noBtn">NO 😏</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Modal -->
+    <div class="modal" id="finalModal">
+      <div class="modal-content">
+        <h2 id="finalText"></h2>
+        <h3 style="opacity: .5;font-size: 0.7;">Dinner date with you💙</h3>
+        <p id="dateDetails">📍 Place: <b>Seared Prime</b> <br />🕒 Time: <b>7:30pm</b></p>
+        <p style="text-align: center;font-size: 0.8rem;opacity: 0.5;">Wear whatever makes you comfortable💙 <br> Your prize will be given on our dinner date. See you!</p>
+      </div>
+    </div>
+
+    <div class="modal" id="preloadModal">
+      <div class="modal-content">
+        <span>🎁 </span>
+        <h2>But before your prize, receive my gift for you!</h2>
+        <div class="spinner" id="spinner"></div>
+      </div>
+    </div>
+
+    <!-- Background music -->
+    <audio id="bgMusic" src="romantic.mp3" loop></audio>
+
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="bouquet.js"></script>
+  </body>
+</html>

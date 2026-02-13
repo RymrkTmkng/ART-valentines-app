@@ -127,3 +127,12 @@ body {
   pointer-events: none;
   z-index: 6000;
 }
+
+
+@media (min-width:478px) {
+
+
+  .modal-content{
+    width: 30%;
+  }
+}

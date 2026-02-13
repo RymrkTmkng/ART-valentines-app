@@ -1,0 +1,244 @@
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #e6f2ff, #cce6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#dateDetails {
+  text-align: start;
+  font-size: 1.2rem;
+}
+
+.container {
+  text-align: center;
+}
+
+.bouquet {
+  width: 70vw;
+  max-width: 300px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.bouquet:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Modals */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yesBtn {
+  background: #3399ff;
+  color: white;
+}
+#noBtn {
+  background: #ff6666;
+  color: white;
+}
+
+/* Petals */
+.petals {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.petal {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, #99ccff, #3366ff);
+  border-radius: 50% 50% 50% 0;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+/* Hearts */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.heart {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: red;
+  transform: rotate(-45deg);
+  animation: heartRise 2s linear forwards;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: red;
+  border-radius: 50%;
+}
+.heart::before {
+  top: -12px;
+  left: 0;
+}
+.heart::after {
+  left: 12px;
+  top: 0;
+}
+
+@keyframes heartRise {
+  0% {
+    transform: scale(0.3) rotate(-45deg) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(-45deg) translateY(-150px);
+    opacity: 0;
+  }
+}
+
+/* Confetti canvas */
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Fireworks placeholder */
+.fireworks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2000;
+}
+
+/*Modal preload*/
+/* Fullscreen modal */
+#preloadModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Centered modal content */
+#preloadModal .modal-content {
+  background: #fff;
+  color: #b22234;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 90%;
+  width: 300px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Spinner style */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #eee; /* light background */
+  border-top: 5px solid #3366ff; /* colored top */
+  border-radius: 50%;
+  margin: 20px auto 0 auto;
+  animation: spin linear forwards;
+}
+
+/* Spin animation — duration will be controlled by JS */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.modal.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@media (max-width: 478px) {
+  .container h1 {
+    font-size: 1.2rem;
+  }
+}
